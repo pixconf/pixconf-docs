@@ -7,7 +7,8 @@
 | (N/P) | state | resource | resource | task |
 | (N/P) | states | recipes | manifests | tasks |
 | (N/P) | formula[^1] | cookbook | module | playbooks |
-| (N/P) | pillars | databags | hiera | vars |
+| vars | pillars | databags | hiera | vars |
+| secrets | pillars | vault in databugs | hiera-eyaml | ansible vault |
 | (N/P) | grains | ohai | facter | facts |
 
 [^1]: formulas are more like 3rd party cookbooks in Chef, there doesn't seem to be an equivalent concept of packaging related states together unless they are meant to be shared externally. Unlike Chef cookbooks or Puppet modules, which it is standard to created for grouping resources even if packaging for distribution is not intended.

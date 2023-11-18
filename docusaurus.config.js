@@ -90,10 +90,10 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} PixConf`,
       },
-      prism: {
-        theme: require('prism-react-renderer/themes/github'),
-        darkTheme: require('prism-react-renderer/themes/dracula'),
-      },
+      // prism: {
+      //   theme: require('prism-react-renderer/themes/github'),
+      //   darkTheme: require('prism-react-renderer/themes/dracula'),
+      // },
     }),
 };
 

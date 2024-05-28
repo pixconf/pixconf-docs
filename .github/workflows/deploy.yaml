@@ -37,10 +37,10 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::966137286427:role/github-actions-pixconf-pixconf-docs
+          role-to-assume: ${{ secrets.AWS_REPO_ROLE }}
 
       - name: Deploy to S3
-        run: aws s3 sync build/ s3://pixconf.vitalvas.dev/ --delete --cache-control "max-age=43200, public"
+        run: aws s3 sync build/ s3://${{ secrets.AWS_BUCKET_SITE }} --delete --cache-control "public"
 
       - name: Invalidate CloudFront cache
-        run: aws cloudfront create-invalidation --distribution-id E2S6UYEG5JNF7H --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_SITE }} --paths "/*"
